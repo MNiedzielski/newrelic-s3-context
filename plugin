@@ -24,7 +24,7 @@ module S3Agent
         region: region)
       s3.list_objects(bucket: bucket_name, :prefix => 'unassigned').each do |page|
         page.contents.each do |object|
-          puts object.key
+#          puts object.key
           count += 1
           size += object.size.to_i
           last_modified = [last_modified, object.last_modified].max
