@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+#
+# Start
+# - bundle exec daemon start
+#
+# Stop
+# - bundle exec daemon stop
+#
+
+require 'daemons'
+
+pwd  = File.join(File.dirname(File.expand_path(__FILE__)), "./")
+Daemons.run('plugin', :dir_mode => :normal, :dir => pwd)
